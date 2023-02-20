@@ -1,7 +1,7 @@
 import { CustomAuthorizerEvent, CustomAuthorizerResult } from 'aws-lambda'
 import 'source-map-support/register'
 
-import { verify, decode, sign } from 'jsonwebtoken'
+import { verify, decode } from 'jsonwebtoken'
 import { createLogger } from '../../utils/logger'
 import Axios from 'axios'
 import { Jwt } from '../../auth/Jwt'
@@ -71,7 +71,6 @@ async function verifyToken(authHeader: string): Promise<JwtPayload> {
   }
   
   const pemData = signingKeys.x5c[0]
-  
   
   const cert = `-----BEGIN CERTIFICATE-----\n${pemData}\n-----END CERTIFICATE-----`
  
