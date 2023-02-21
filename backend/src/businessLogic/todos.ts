@@ -50,7 +50,7 @@ export async function updateTodo(
     todoUpdate: UpdateTodoRequest,
     userId: string
     ): Promise<TodoUpdate> {
-        logger.info('Update tdo function called')
+        logger.info('Update todo function called')
         return todosAccess.updateTodoItem(todoId,userId, todoUpdate)
     }
 
@@ -70,6 +70,6 @@ export async function createAttachmentPresignedUrl(
     todoId: string,
     userId: string
     ): Promise<string> {
-        logger.info('create attachement function called', userId, todoId)
+        logger.info('Create attachment function called', userId, todoId)
         return attachmentUtils.getUploadUrl(todoId)
     }
