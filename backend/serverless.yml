@@ -76,6 +76,7 @@ functions:
           path: todos
           cors: true
           # authorizer: Auth
+          Aws.HttpAuthorizer: Auth
     iamRoleStatementsName: ${self:provider.environment.PROJECT_NAME}-get-todo-role-${self:provider.stage}
     iamRoleStatements:
       - Effect: Allow
